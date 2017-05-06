@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sammoku", "Sammoku\Sammoku.csproj", "{FC98122E-B7BF-494B-B91A-7A0E18545C2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerfectAnalysis", "PerfectAnalysis\PerfectAnalysis.csproj", "{25B3AD8D-D3B5-429B-804A-5725D628759A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC98122E-B7BF-494B-B91A-7A0E18545C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC98122E-B7BF-494B-B91A-7A0E18545C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC98122E-B7BF-494B-B91A-7A0E18545C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC98122E-B7BF-494B-B91A-7A0E18545C2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25B3AD8D-D3B5-429B-804A-5725D628759A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25B3AD8D-D3B5-429B-804A-5725D628759A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25B3AD8D-D3B5-429B-804A-5725D628759A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25B3AD8D-D3B5-429B-804A-5725D628759A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
