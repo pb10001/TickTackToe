@@ -54,29 +54,26 @@ namespace PerfectAnalysis
                 {
                     tmp.Add(item);
                 }
-                Parallel.ForEach(tmp, item =>
+                foreach (var item in tmp)
                 {
-                    lock (tmp)
+                    switch (item.Board.JudgeWinner())
                     {
-                        switch (item.Board.JudgeWinner())
-                        {
-                            case MatchResult.Draw:
-                                item.Winner = MatchResult.Draw;
-                                break;
-                            case MatchResult.Sente:
-                                item.Winner = MatchResult.Sente;
-                                break;
-                            case MatchResult.Gote:
-                                item.Winner = MatchResult.Gote;
-                                break;
-                            case MatchResult.NotYet:
-                                searchChildren(item, currentPlayer);
-                                break;
-                            default:
-                                break;
-                        }
+                        case MatchResult.Draw:
+                            item.Winner = MatchResult.Draw;
+                            break;
+                        case MatchResult.Sente:
+                            item.Winner = MatchResult.Sente;
+                            break;
+                        case MatchResult.Gote:
+                            item.Winner = MatchResult.Gote;
+                            break;
+                        case MatchResult.NotYet:
+                            searchChildren(item, currentPlayer);
+                            break;
+                        default:
+                            break;
                     }
-                });
+                }
                 TurnChanged(i);
             }
             for (int i = 8; i >= 0; i--)
@@ -115,7 +112,7 @@ namespace PerfectAnalysis
                     }
                 }
             }
-            var res =stateList.AsParallel().OrderBy(x=>x.Turn).Select(item => string.Format("{0},{1},{2}\n", item.Turn, item.Board.ToStateString(), item.Winner));
+            var res =stateList.Select(item => string.Format("{0},{1},{2}\n", item.Turn, item.Board.ToStateString(), item.Winner));
             var header = "Turn,11,12,13,21,22,23,31,32,33,Winner\n";
             return header+string.Join("",res);
         }
