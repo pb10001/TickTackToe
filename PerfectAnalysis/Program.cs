@@ -19,7 +19,7 @@ namespace PerfectAnalysis
             analyser.TurnChanged += Analyser_TurnChanged;
             watch.Start();
             var res = analyser.Execute();
-            File.WriteAllText("perfectsammoku.csv",res);
+            File.WriteAllText("perfectsammoku.csv", res);
         }
         static Stopwatch watch;
         private static void Analyser_TurnChanged(int currentTurn)
