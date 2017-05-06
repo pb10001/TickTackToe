@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sammoku</name>
+    </assembly>
+    <members>
+        <member name="T:Sammoku.StoneType">
+            <summary>
+            盤上の石の状態
+            </summary>
+        </member>
+        <member name="T:Sammoku.MatchResult">
+            <summary>
+            対局結果
+            </summary>
+        </member>
+        <member name="F:Sammoku.MatchResult.Draw">
+            <summary>
+            引き分け
+            </summary>
+        </member>
+        <member name="F:Sammoku.MatchResult.Sente">
+            <summary>
+            先手の勝ち
+            </summary>
+        </member>
+        <member name="F:Sammoku.MatchResult.Gote">
+            <summary>
+            後手の勝ち
+            </summary>
+        </member>
+        <member name="F:Sammoku.MatchResult.NotYet">
+            <summary>
+            まだ終わっていない
+            </summary>
+        </member>
+        <member name="T:Sammoku.SammokuBoard">
+            <summary>
+            盤を表すクラス
+            </summary>
+        </member>
+        <member name="M:Sammoku.SammokuBoard.#ctor">
+            <summary>
+            盤のインスタンスを初期化
+            </summary>
+        </member>
+        <member name="M:Sammoku.SammokuBoard.#ctor(System.String)">
+            <summary>
+            状態を元に盤のインスタンスを初期化
+            </summary>
+            <param name="stateString">状態の文字列</param>
+        </member>
+        <member name="M:Sammoku.SammokuBoard.Init">
+            <summary>
+            盤の各マスにデフォルトの状態(None)を代入
+            </summary>
+        </member>
+        <member name="M:Sammoku.SammokuBoard.Add(System.Int32,System.Int32,Sammoku.StoneType)">
+            <summary>
+            盤に石を打つ
+            </summary>
+            <param name="row">行番号(0,1,2)</param>
+            <param name="col">列番号(0,1,2)</param>
+            <param name="player">先後</param>
+            <returns>石を打った後の盤</returns>
+        </member>
+        <member name="M:Sammoku.SammokuBoard.GetState(System.Int32,System.Int32)">
+            <summary>
+            マスを指定して状態を取得
+            </summary>
+            <param name="row">行番号(0,1,2)</param>
+            <param name="col">列番号(0,1,2)</param>
+            <returns>マスの状態</returns>
+        </member>
+        <member name="M:Sammoku.SammokuBoard.ToStateString">
+            <summary>
+            盤の状態を文字列で取得
+            </summary>
+            <returns>盤の状態を表す文字列</returns>
+        </member>
+        <member name="M:Sammoku.SammokuBoard.JudgeWinner">
+            <summary>
+            勝敗を判定
+            </summary>
+            <returns>勝ち、負け、引き分け、まだ終わっていないのいずれか</returns>
+        </member>
+    </members>
+</doc>
