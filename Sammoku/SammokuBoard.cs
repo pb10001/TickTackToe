@@ -11,8 +11,17 @@ namespace Sammoku
     /// </summary>
     public enum StoneType
     {
+        /// <summary>
+        /// 石なし
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// 先手
+        /// </summary>
         Sente = 1,
+        /// <summary>
+        /// 後手
+        /// </summary>
         Gote = 2
     }
     /// <summary>

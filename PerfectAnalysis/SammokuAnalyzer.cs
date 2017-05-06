@@ -23,7 +23,18 @@ namespace PerfectAnalysis
             stateList.Add(initState);
         }
         StoneType currentPlayer;
-        HashSet<State> stateList = new HashSet<State>();
+        /// <summary>
+        /// 重複をチェックするためのハッシュセット
+        /// </summary>
+        HashSet<string> duplCheckList = new HashSet<string>();
+        /// <summary>
+        /// 探索に使うためのリスト
+        /// </summary>
+        List<State> stateList = new List<State>();
+        /// <summary>
+        /// 結果を返すためのリスト
+        /// </summary>
+        List<State> resultList = new List<State>();
         /// <summary>
         /// ある手数の探索が終わったことを表すデリゲート
         /// </summary>
@@ -112,7 +123,7 @@ namespace PerfectAnalysis
                     }
                 }
             }
-            var res =stateList.Select(item => string.Format("{0},{1},{2}\n", item.Turn, item.Board.ToStateString(), item.Winner));
+            var res =resultList.Select(item => string.Format("{0},{1},{2}\n", item.Turn, item.Board.ToStateString(), item.Winner));
             var header = "Turn,11,12,13,21,22,23,31,32,33,Winner\n";
             return header+string.Join("",res);
         }
@@ -125,10 +136,18 @@ namespace PerfectAnalysis
                     if (state.Board.GetState(row, col) == StoneType.None)
                     {
                         var newbrd = state.Board.Add(row, col, player);
-                        var newst = new State(state.Turn + 1, newbrd);
-                        newst.Winner = newbrd.JudgeWinner();
+                        var newst = new State(state.Turn + 1, newbrd)
+                        {
+                            Winner = newbrd.JudgeWinner()
+                        };
                         state.Children.Add(newst);
+                        //探索用リストにはそのまま追加
                         stateList.Add(newst);
+                        if (duplCheckList.Add(newbrd.ToStateString()))
+                        {
+                            //ハッシュセットで重複を確認してから結果用リストに追加
+                            resultList.Add(newst);
+                        }
                     }
                 }
             }
