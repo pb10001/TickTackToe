@@ -5,5 +5,5 @@
 ## 使い方
 exeフォルダ内のPerfectAnalysis.exeとSammoku.dllを同じディレクトリに置いてください。  
 PerfectAnalysis.exeをダブルクリックすると起動します。  
-自動的に終了し、実行ファイルと同じフォルダにperfectsammoku.csvを出力します。  
+実行ファイルと同じフォルダにperfectsammoku.csvを出力します。  
 ※約130kBのファイルを出力します。  
