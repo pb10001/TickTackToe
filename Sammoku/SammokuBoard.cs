@@ -89,9 +89,9 @@ namespace Sammoku
         /// <param name="col">列番号(0,1,2)</param>
         /// <param name="player">先後</param>
         /// <returns>石を打った後の盤</returns>
-        public SammokuBoard Add(int row,int col,StoneType player)
+        public SammokuBoard AddStone(int row,int col,StoneType player)
         {
-            return new SammokuBoard(ToStateString()).add(row,col,player);
+            return new SammokuBoard(ToStateString()).Add(row,col,player);
         }
         /// <summary>
         /// マスを指定して状態を取得
@@ -99,7 +99,7 @@ namespace Sammoku
         /// <param name="row">行番号(0,1,2)</param>
         /// <param name="col">列番号(0,1,2)</param>
         /// <returns>マスの状態</returns>
-        public StoneType GetState(int row,int col)
+        public StoneType GetState(int row, int col)
         {
             return board[row, col];
         }
@@ -170,7 +170,7 @@ namespace Sammoku
             }
         }
 
-        private SammokuBoard add(int row, int col, StoneType player)
+        private SammokuBoard Add(int row, int col, StoneType player)
         {
             if (player == StoneType.None)
             {

@@ -32,7 +32,7 @@ namespace PerfectAnalysis
         /// <summary>
         /// 結果
         /// </summary>
-        public MatchResult Winner { get; set; } = MatchResult.NotYet;
+        public MatchResult Winner { get; private set; } = MatchResult.NotYet;
         /// <summary>
         /// 次に遷移しうる状態のリスト
         /// </summary>
@@ -53,7 +53,7 @@ namespace PerfectAnalysis
                     if (Board.GetState(row, col) == StoneType.None)
                     {
                         var nextSengo = (Turn+1) % 2 == 1 ? StoneType.Sente : StoneType.Gote;
-                        var childBoard = Board.Add(row, col, nextSengo);
+                        var childBoard = Board.AddStone(row, col, nextSengo);
                         var childState = new State(Turn + 1, childBoard);
                         childState.SearchChildren(); //再帰的に呼び出す
                         Children.Add(childState);
