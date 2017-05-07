@@ -9,22 +9,6 @@
             三目並べを完全解析するクラス
             </summary>
         </member>
-        <member name="M:PerfectAnalysis.SammokuAnalyzer.#ctor">
-            <summary>
-            インスタンスを初期化
-            </summary>
-        </member>
-        <member name="T:PerfectAnalysis.SammokuAnalyzer.TurnChangedEventHandler">
-            <summary>
-            ある手数の探索が終わったことを表すデリゲート
-            </summary>
-            <param name="currentTurn">現在の手数</param>
-        </member>
-        <member name="E:PerfectAnalysis.SammokuAnalyzer.TurnChanged">
-            <summary>
-            手数が代わったときに発生するイベント
-            </summary>
-        </member>
         <member name="M:PerfectAnalysis.SammokuAnalyzer.Execute">
             <summary>
             探索を実行
@@ -62,6 +46,22 @@
             <summary>
             次に遷移しうる状態のリスト
             </summary>
+        </member>
+        <member name="M:PerfectAnalysis.State.SearchChildren">
+            <summary>
+            次の状態を探索(再帰的に最後まで探索するので、呼び出すのは1回でよい)
+            </summary>
+        </member>
+        <member name="M:PerfectAnalysis.State.ResetWinner">
+            <summary>
+            WinnerがNotYetの場合、次の状態を見てWinnerを更新
+            </summary>
+        </member>
+        <member name="M:PerfectAnalysis.State.ToString">
+            <summary>
+            出力用の文字列を作成
+            </summary>
+            <returns>出力用の文字列</returns>
         </member>
     </members>
 </doc>

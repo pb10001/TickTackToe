@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sammoku
 {
@@ -70,7 +66,7 @@ namespace Sammoku
             board[1, 2] = (StoneType) int.Parse(array[5]);
             board[2, 0] = (StoneType) int.Parse(array[6]);
             board[2, 1] = (StoneType) int.Parse(array[7]);
-            board[2, 2] = (StoneType)int.Parse(array[8]);
+            board[2, 2] = (StoneType) int.Parse(array[8]);
         }
         StoneType[,] board = new StoneType[3, 3];
         /// <summary>

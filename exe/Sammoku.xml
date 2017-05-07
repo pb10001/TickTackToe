@@ -9,6 +9,21 @@
             盤上の石の状態
             </summary>
         </member>
+        <member name="F:Sammoku.StoneType.None">
+            <summary>
+            石なし
+            </summary>
+        </member>
+        <member name="F:Sammoku.StoneType.Sente">
+            <summary>
+            先手
+            </summary>
+        </member>
+        <member name="F:Sammoku.StoneType.Gote">
+            <summary>
+            後手
+            </summary>
+        </member>
         <member name="T:Sammoku.MatchResult">
             <summary>
             対局結果
